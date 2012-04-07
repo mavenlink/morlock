@@ -1,3 +1,6 @@
+require "morlock/version"
+require 'morlock/base'
+
 class Morlock
   class MorlockRailtie < ::Rails::Railtie
     config.after_initialize do
