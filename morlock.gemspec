@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Morlock::VERSION
   s.authors     = ["Andrew Cantino & Chris Alvarado-Dryden"]
   s.email       = ["pair+andrew+chris@mavenlink.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/mavenlink/morlock"
+  s.summary     = %q{Distributed locking with memcached.}
+  s.description = %q{}
 
   s.rubyforge_project = "morlock"
 
@@ -21,5 +21,4 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec"
   s.add_development_dependency "rr"
-  #s.add_runtime_dependency "memcache-client"
 end
