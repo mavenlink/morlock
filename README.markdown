@@ -12,13 +12,13 @@ Morlock turns your memcached server into a distributed, conflict-eating machine.
 	require 'morlock'
 
 	mem_cache_client = MemCache.new("memcached.you.com")
-    morlock = Morlock.new(mem_cache_client)
+	morlock = Morlock.new(mem_cache_client)
 
 If you prefer Dalli, use that instead:
 
 	require 'dalli'
 	dc = Dalli::Client.new('localhost:11211')
-  morlock = Morlock.new(dc)
+	morlock = Morlock.new(dc)
 
 #### Rails
 
