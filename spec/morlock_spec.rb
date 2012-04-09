@@ -57,6 +57,26 @@ describe Morlock do
           morlock.lock("some_key", :expiration => 60).should == false
         end
       end
+
+      describe "with test" do
+        before do
+          @mock_client = :test
+          @morlock = Morlock.new(@mock_client)
+        end
+
+        it "should make a test client" do
+          @morlock.client.is_a?(Morlock::TestGemClient).should == true
+        end
+
+        it "should yield and return true when trying to lock" do
+          yielded = false
+          result = @morlock.lock("some_key") do
+            yielded = true
+          end
+          yielded.should be_true
+          result.should be_true
+        end
+      end
     end
 
     context "general behavior" do
