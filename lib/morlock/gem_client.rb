@@ -1,6 +1,6 @@
 class Morlock
-  class UnknownGemClient < StandardError;
-  end
+  class UnknownGemClient < StandardError; end
+
 
   class GemClient
     GEM_CLIENTS = []
@@ -18,15 +18,15 @@ class Morlock
         end
       end
 
-      raise UnknownGemClient.new("You provided Morlock a memcached client of an unknown type: #{client.class}")
+      raise UnknownGemClient.new("You provided Morlock with a memcached client of an unknown type: #{client.class}")
     end
 
-
     def no_server_error(e)
-      STDERR.puts "WARNING: No memcached server found; Memlock was unable to create a lock. (#{e.message})"
+      STDERR.puts "WARNING: No memcached server was found; Memlock was unable to create a lock. (#{e.message})"
       true
     end
   end
+
 
   class DalliGemClient < GemClient
     def add(key, expiration)

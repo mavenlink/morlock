@@ -12,6 +12,8 @@ class Morlock
             end
           end
         end
+      else
+        Rails.logger.warn "WARNING: Morlock could not load @data in #setup_for_mem_cache_store.  Perhaps we don't yet work with this version of Rails?"
       end
     end
 
@@ -39,7 +41,6 @@ class Morlock
       else
         Rails.logger.warn "WARNING: Morlock detected that you are not using the Rails ActiveSupport::Cache::MemCacheStore.  Rails.morlock will not be setup."
       end
-
     end
 
     config.after_initialize do

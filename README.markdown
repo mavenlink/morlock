@@ -28,7 +28,7 @@ With Bundler:
 
 	gem 'morlock', :require => 'morlock/rails'
 
-Or in any script after Rails has loaded:
+Or in any script:
 
 	require 'morlock/rails'
 
@@ -41,7 +41,7 @@ Possible usages:
 	handle_failed_lock unless morlock.lock(key) do
 		# We have the lock
 	end
-	
+
 	morlock.lock(key) { # We have the lock } || raise "Unable to lock!"
 
 	morlock.lock(key, :failure => failure_proc) do
@@ -49,3 +49,5 @@ Possible usages:
 	end
 
 	morlock.lock(key, :failure => failure_proc, :success => success_proc)
+
+Morlock doesn't currently do retries, but this could be added in the future.  Feel free to submit a patch!
