@@ -1,3 +1,7 @@
+# Archived
+
+This project has been archived, it was last known to be compatible with `ruby 3.1` / `rails 7.0`
+
 # Morlock
 
 Morlock turns your memcached server into a distributed, conflict-eating machine.  Rails integration is dug in.
